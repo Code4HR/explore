@@ -7,6 +7,18 @@ body {
   color: #5a5a5a;
 }
 
+.margin10 {
+ margin:10px;
+ }
+ 
+.margin10left {
+ margin-left:10px;
+ }
+ 
+.margin10right {
+ margin-right:10px;
+ }
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */

@@ -1,0 +1,165 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.white {
+    color: #fff;
+}
+.black {
+    color: #000;
+}
+.slider-title {
+    font-family: "Futura", sans-serif;
+    font-size: 1.75em;
+    padding: 10px 0 0 0;
+}
+#map {
+    height: 100%;
+    width: 75%;
+    float: right;
+}
+#target {
+    width: 345px;
+}
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.leftLabel, .centerLabel, .rightLabel{
+    width: 32%;
+    display: inline-block;
+    color: white;
+}
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+    z-index: 20;
+}
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+.pac-container {
+    font-family: Roboto;
+}
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+.sideRail {
+
+    width: 20%;
+	min-width: 200px;
+    height: 100%;
+	position: relative;
+    background-color: #111;
+    float: left;
+
+}
+
+.railTable {
+    top: 100px;
+    position: relative;
+    text-align: center;
+	margin: 5%;
+    width: 90%;
+}
+.slider {
+    width: 100%;
+    height: 17px;
+    position: relative;
+    margin: 10px auto;
+}
+.slider .bar {
+    width: 100%;
+    height: 15px;
+    background: #FFF;
+    position: relative;
+    top: -4px;
+
+    background: #CCC;
+    background: -moz-linear-gradient(left, #CCC 0%, #AAA 50%, #AAA 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#CCC), color-stop(50%,#AAA), color-stop(100%,#AAA));
+    background: -webkit-linear-gradient(left, #CCC 0%,#AAA 50%,#AAA 100%);
+    background: -o-linear-gradient(left, #CCC 0%,#AAA 50%,#AAA 100%);
+    background: -ms-linear-gradient(left, #CCC 0%,#AAA 50%,#AAA 100%);
+    background: linear-gradient(left, #CCC 0%,#AAA 50%,#AAA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CCC', endColorstr='#AAA',GradientType=1 );
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: red;
+    height: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+    width: 15px;
+    height: 20px;
+    cursor: pointer;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
+}
+input[type="range"]:hover ~ #crimeRangeValue, input[type="range"]:hover ~ #colRangeValue, input[type="range"]:hover ~ #foodSanitationRangeValue{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    top: -75px;
+}
+input[type="range"]:active ~ #crimeRangeValue, input[type="range"]:active ~ #colRangeValue, input[type="range"]:active ~ #foodSanitationRangeValue {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    top: -75px;
+}
+#crimeRangeValue, #colRangeValue, #foodSanitationRangeValue {
+	color: white;
+	font-size: 10px;
+	text-align: center;
+	font-family:  "Futura", sans-serif;
+	display: block;
+	color: #fff;
+	margin: 20px 0;
+	position: relative;
+	left: 44.5%;
+	padding: 1px 1px;
+	border: 1px solid black;
+
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
+	box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222931), color-stop(100%,#181D21));
+
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	width: 18px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    top: -95px;
+}
