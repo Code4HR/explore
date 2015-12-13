@@ -50,6 +50,13 @@ body {
 	max-width: 300px;
 	height:auto;
 }
+.navbar-links {
+    padding: 30px 40px;
+}
+.navbar-links li a {
+    font-size: 2em;
+    text-align: center;
+}
 
 @media(min-width:768px) {
 
