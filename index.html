@@ -41,11 +41,6 @@
             <a href="index.html"><img src="images/explorehr-inverted.png" alt="Explore Hampton Roads" class="navbar-brand" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-links">
-                <li><a href="#crime">Crime</a></li>
-                <li><a href="#schools">Schools</a></li>
-                <li><a href="#other">Other</a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right margin10right">
                 <li><a href="/map.html"><i class="glyphicon glyphicon-search"></i> Explore</a></li>
                 <li><a href="http://hamptonroads.com/"><i class="glyphicon glyphicon-heart"></i> Experience</a></li>
@@ -75,16 +70,22 @@
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
+                <ul class="nav nav-tabs">
+                    <li class="presentation"><a href="#crimeNav"><i class="glyphicon glyphicon-eye-open"></i>  Crime</a></li>
+                    <li class="presentation"><a href="#schoolsNav"><i class="glyphicon glyphicon-apple"></i>  Schools</a></li>
+                    <li class="presentation"><a href="#otherNav"><i class="glyphicon glyphicon-usd"></i>  Other</a></li>
+                </ul>
                 <div class="col-md-12">
-                    <h1>Are you ready to Explore Hampton Roads!?</h1>
+                    <h1  id="crimeNav">Are you ready to Explore Hampton Roads!?</h1>
                     <p>Hampton Roads is a robust community made up of multiple cities in South Eastern Virginia and North Eastern NC.  
                         There are over a million people living within its region and millions of other people visit its beautiful beaches
                         or to learn about its rich history.</p>
                     </div>
                 </div>
+                <div class="clearfix"></div>
                 
                 
-                <div class="row" id="crime">
+                <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Explore Crime</h1>
                         <hr />
@@ -125,7 +126,7 @@
                                 <canvas id="canvas_area"></canvas>
                             </div>
                         </div>
-                        <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Income Levels</a></p>
+                        <p id="schoolsNav"><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Income Levels</a></p>
                     </div>
                     
                 </div>
@@ -180,7 +181,7 @@
                                     <canvas id="canvas_bar"></canvas>
                                 </div>
                             </div>
-                            <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Population</a></p>
+                            <p id="otherNav"><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Population</a></p>
                         </div>
                         
                     </div>

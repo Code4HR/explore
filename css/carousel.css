@@ -53,11 +53,15 @@ body {
 .navbar-links {
     padding: 30px 40px;
 }
-.navbar-links li a {
-    font-size: 2em;
-    text-align: center;
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    font-size: 1.25em;
+    color: #9d9d9d;
 }
-
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
 @media(min-width:768px) {
 
     .navbar-brand {
