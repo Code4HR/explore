@@ -1,0 +1,58 @@
+{
+    "name": "hackathon/explorehr",
+    "description": "Explore Hampton Roads UI project",
+    "keywords": ["explorehr", "hackathon"],
+    "authors": [
+        {
+            "name": "Jason Bennett",
+            "email": "jason.bennett@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Tom Bielek",
+            "email": "thomas.bielek@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Krishna Ranga",
+            "email": "krishna.ranga@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Alicia Sedarski",
+            "email": "alicia.sedarski@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Josiah Baker",
+            "email": "josiah.baker@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Derek Drummond",
+            "email": "derek.drummond@dominionenterprises.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Krishna Ranga",
+            "email": "krishna.ranga@dominionenterprises.com",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "~5.4",
+        "ext-json": "~1.2",
+        "guzzlehttp/guzzle": "~6.1",
+        "silex/silex": "~1.3",
+        "twig/twig": "^1.22"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "EXPLOREHR\\": "src/Explore/"
+        }
+    }
+}
+
