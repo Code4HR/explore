@@ -30,7 +30,7 @@
 
 <body>
     
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="index.html"><img src="images/explorehr.png" alt="Explore Hampton Roads" class="navbar-brand" /></a>
+            <a href="index.html"><img src="images/explorehr-inverted.png" alt="Explore Hampton Roads" class="navbar-brand" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right margin10right">
@@ -70,23 +70,30 @@
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
+                <ul class="nav nav-tabs">
+                    <li class="presentation"><a href="#crimeNav"><i class="glyphicon glyphicon-eye-open"></i>  Crime</a></li>
+                    <li class="presentation"><a href="#schoolsNav"><i class="glyphicon glyphicon-apple"></i>  Schools</a></li>
+                    <li class="presentation"><a href="#otherNav"><i class="glyphicon glyphicon-usd"></i>  Other</a></li>
+                </ul>
                 <div class="col-md-12">
-                    <h1>Are you ready to Explore Hampton Roads!?</h1>
+                    <h1  id="crimeNav">Are you ready to Explore Hampton Roads!?</h1>
                     <p>Hampton Roads is a robust community made up of multiple cities in South Eastern Virginia and North Eastern NC.  
                         There are over a million people living within its region and millions of other people visit its beautiful beaches
                         or to learn about its rich history.</p>
                     </div>
                 </div>
+                <div class="clearfix"></div>
                 
                 
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Explore Crime</h1>
+                        <hr />
                     </div>
-                    <div class="col-md-5 col-sm-5 col-xs-12 text-center">
+                    <div class="col-md-4 col-sm-4 col-xs-12 text-center">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Crime Rates by City</h2>
+                                <h4>Crime Rates by City</h4>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
@@ -96,17 +103,30 @@
                         <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Crime Rates</a></p>
                     </div>
                     
-                    <div class="col-md-5 col-sm-5  col-md-offset-1 col-sm-offset-1 col-xs-12 text-center">
+                    <div class="col-md-4 col-sm-4 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
+                        <div class="x_panel">
+                            <div class-"x_title">
+                                <h4>About the Data</h4>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <p>Talk about the crime data here.</p>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-4  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Income by City</h2>
+                                <h4>Income by City</h4>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
                                 <canvas id="canvas_area"></canvas>
                             </div>
                         </div>
-                        <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Income Levels</a></p>
+                        <p id="schoolsNav"><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Income Levels</a></p>
                     </div>
                     
                 </div>
@@ -120,14 +140,15 @@
                     
                     
                     
-                    <div class="row">
+                    <div class="row" id="schools">
                         <div class="col-md-12 text-center">
                             <h1>Explore Schools</h1>
+                            <hr />
                         </div>
-                        <div class="col-md-5 col-sm-5 col-xs-12 text-center">
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-center">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Income vs. Education</h2>
+                                    <h4>Income vs. Education</h4>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -137,17 +158,30 @@
                             <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Education</a></p>
                         </div>
                         
-                        <div class="col-md-5 col-sm-5  col-md-offset-1 col-sm-offset-1 col-xs-12 text-center">
+                        <div class="col-md-4 col-sm-4 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
+                            <div class="x_panel">
+                                <div class-"x_title">
+                                    <h4>About the Data</h4>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <p>Talk about the school data here.</p>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-4  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Population Growth</h2>
+                                    <h4>Population Growth</h4>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
                                     <canvas id="canvas_bar"></canvas>
                                 </div>
                             </div>
-                            <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Population</a></p>
+                            <p id="otherNav"><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Population</a></p>
                         </div>
                         
                     </div>
@@ -161,14 +195,15 @@
                         
                         
                         
-                        <div class="row">
+                        <div class="row" id="other">
                             <div class="col-md-12 text-center">
-                                <h1>Explore More    </h1>
+                                <h1>Explore More</h1>
+                                <hr />
                             </div>
-                            <div class="col-md-5 col-sm-5 col-xs-12 text-center">
+                            <div class="col-md-4 col-sm-4 col-xs-12 text-center">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>Lifestyle</h2>
+                                        <h4>Lifestyle</h4>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="x_content">
@@ -178,10 +213,23 @@
                                 <p><a class="btn btn-lg btn-default" href="#" role="button"><i class="glyphicon glyphicon-search"></i> Explore Lifestyles</a></p>
                             </div>
                             
-                            <div class="col-md-5 col-sm-5  col-md-offset-1 col-sm-offset-1 col-xs-12 text-center">
+                            <div class="col-md-4 col-sm-4 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
+                                <div class="x_panel">
+                                    <div class-"x_title">
+                                        <h4>About the Data</h4>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <p>Talk about the other data here.</p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-sm-4  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>Ethnicity</h2>
+                                        <h4>Ethnicity</h4>
                                     </div>
                                     <div class="x_content">
                                         <canvas id="canvas_doughnut"></canvas>
