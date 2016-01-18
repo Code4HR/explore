@@ -6,7 +6,15 @@
       {
         "url": "/",
         "controller": "EXPLOREHR\\Controllers\\Main::main"
-      }
+    },
+    {
+        "url": "/map",
+        "controller": "EXPLOREHR\\Controllers\\Map::main"
+    },
+    {
+        "url": "/data/crime",
+        "controller": "EXPLOREHR\\Controllers\\Crime::main"
+    }
     ]
   }
 }

@@ -1,20 +1,19 @@
 <?php
 /**
- * This is the main bootstrap for the HRQLS Application.
+ * This is the main bootstrap for the Explore Application.
  *
  * When a new request comes in, this class is instantiated and spins up
  * the Silex framework for THAT REQUEST.  It does not persist between
  * requests.
  *
- * @package HRQLS
+ * @package Explore
  */
-namespace HRQLS;
+namespace EXPLOREHR;
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
-use HRQLS\Models\ElasticSearchServiceProvider;
-use HRQLS\Models\GuzzleProvider;
-use HRQLS\Controllers\ModulesController;
+use EXPLOREHR\Models\GuzzleProvider;
+use EXPLOREHR\Controllers\ModulesController;
 use Monolog\Logger;
 use JsonSchema\Uri\UriRetriever;
 use Elasticsearch\ClientBuilder;
@@ -156,16 +155,6 @@ class Bootstrap
     public function loadHttpClients()
     {
         $this->app['guzzle'] = new GuzzleProvider(new Client());
-    }
-
-    /**
-     * Loads any valid modules found in the install.
-     *
-     * @return void
-     */
-    public function loadModules()
-    {
-        $modules = new ModulesController();
     }
 
     /**
