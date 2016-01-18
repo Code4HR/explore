@@ -1,0 +1,12 @@
+{
+  "siteName": "Explore Hampton Roads",
+  "databases": { },
+  "routes": {
+    "get": [
+      {
+        "url": "/",
+        "controller": "EXPLOREHR\\Controllers\\Main::main"
+      }
+    ]
+  }
+}
