@@ -9,6 +9,9 @@ html, body {
 .black {
     color: #000;
 }
+.background-white {
+    background-color: #fff;
+}
 .slider-title {
     font-family: "Futura", sans-serif;
     font-size: 1.75em;
