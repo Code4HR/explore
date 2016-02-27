@@ -11,10 +11,13 @@
 </head>
 <body>
     {{ block('header')}}
+    <div class="dataSelect">
+        <img class="dataIcon" src="images/fingerprint.png"></img>
+    </div>
     <div id="map"></div>
     <script src="js/jquery.min.js"></script>
     <script src="/js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDglONa03SLsLkWrBbCL0WFYOeAhNKrpJI&libraries=visualization&callback=initAutocomplete&sensor=true_or_false" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDglONa03SLsLkWrBbCL0WFYOeAhNKrpJI&libraries=visualization&callback=initAutocomplete" async defer></script>
     
     {{ block('bootstrapCore')}}
 </body>
