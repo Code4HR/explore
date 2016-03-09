@@ -3,6 +3,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.navbar {
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
 .white {
     color: #fff;
 }
@@ -12,8 +17,29 @@ html, body {
 .background-white {
     background-color: #fff;
 }
+.dataSelect {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 5%;
+    background-color: #222222;
+    float: left;
+    text-align: center;
+}
+.dataIcon {
+    width: 80%;
+    padding: 10px 2px;
+}
 #map {
     height: 100%;
-    width: 100%;
+    width: 95%;
     float: right;
+}
+@media only screen and (max-width: 650px) {
+    .dataSelect {
+        width: 10%;
+    }
+    #map {
+        width: 90%;
+    }
 }
