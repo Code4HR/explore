@@ -14,7 +14,7 @@ RUN a2ensite apache
 RUN a2enmod rewrite
 COPY . /var/www/html
 
-ENV API_URL http://hercules.code4hr.org:81
+#ENV API_URL http://hercules.code4hr.org:81
 
 ENV API_URL http://hercules.code4hr.org
 
