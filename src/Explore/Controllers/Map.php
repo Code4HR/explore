@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Main controller for root level of site.
+ * Map controller for the map.
  */
-class Main
+class Map
 {
     /**
      * Entry point for the root level page.
@@ -25,7 +25,7 @@ class Main
      */
     public function main(Request $req, Application $app)
     {
-        return $app['twig']->render('main.twig', array(
+        return $app['twig']->render('map.twig', array(
             'title' => 'Explore Hampton Roads'
         ));
     }

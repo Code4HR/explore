@@ -30,3 +30,21 @@ Currently, the _Explore: Hampton Roads_ web application will be sourced with Vir
 - [@JasonBennett](https://github.com/blackhatbrigade) - Master of Automation
 - [@AliciaSedarski](https://github.com/asedarski) - Makes it look pretty
 
+
+#Apache Vhost
+
+```
+<VirtualHost *:80>
+    ServerName www.explorehr.com
+    DocumentRoot "/home/{user}/explore/public/"
+
+    ErrorLog /home/{user}/explore/logs/explorehr.error_log
+    CustomLog /home/{user}/explore/logs/explorehr.access_log combined
+</VirtualHost>
+<Directory "/home/{user}/explore/public/">
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    Require all granted
+</Directory>
+```

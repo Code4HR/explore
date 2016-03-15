@@ -16,6 +16,8 @@ COPY . /var/www/html
 
 ENV API_URL http://hercules.code4hr.org:81
 
+ENV API_URL http://hercules.code4hr.org
+
 EXPOSE 80
 CMD ["apache2-foreground"]
 

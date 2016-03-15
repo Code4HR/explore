@@ -1,0 +1,26 @@
+{# map.twig #}
+
+{% use 'mainHead.twig' %}
+{% use 'header.twig' %}
+{% use 'bootstrapCore.twig' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ block('mainHead')}}
+</head>
+<body>
+    {{ block('header')}}
+    <div class="dataSelect">
+        <img class="dataIcon" src="images/fingerprint.png"></img>
+        <img class="dataIcon" src="images/apple.png"></img>
+        <img class="dataIcon" src="images/food.png"></img>
+        <img class="dataIcon" src="images/housingCost.png"></img>
+    </div>
+    <div id="map"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDglONa03SLsLkWrBbCL0WFYOeAhNKrpJI&libraries=visualization&callback=initAutocomplete" async defer></script>
+    
+    {{ block('bootstrapCore')}}
+</body>

@@ -1,0 +1,52 @@
+[Mon Jan 18 14:15:52.542369 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP Warning:  require_once(/home/alicia/explore/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.542402 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP Stack trace:
+[Mon Jan 18 14:15:52.542407 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:15:52.542413 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP Fatal error:  require_once(): Failed opening required '/home/alicia/explore/public/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.542417 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP Stack trace:
+[Mon Jan 18 14:15:52.542420 2016] [:error] [pid 7612] [client 127.0.0.1:35633] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:15:52.581237 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP Warning:  require_once(/home/alicia/explore/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.581286 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP Stack trace:
+[Mon Jan 18 14:15:52.581300 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:15:52.581315 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP Fatal error:  require_once(): Failed opening required '/home/alicia/explore/public/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.581318 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP Stack trace:
+[Mon Jan 18 14:15:52.581321 2016] [:error] [pid 7613] [client 127.0.0.1:35634] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:15:52.585738 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP Warning:  require_once(/home/alicia/explore/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.585754 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP Stack trace:
+[Mon Jan 18 14:15:52.585760 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:15:52.585769 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP Fatal error:  require_once(): Failed opening required '/home/alicia/explore/public/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:15:52.585771 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP Stack trace:
+[Mon Jan 18 14:15:52.585773 2016] [:error] [pid 7614] [client 127.0.0.1:35635] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:12.489631 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP Warning:  require_once(/home/alicia/explore/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:16:12.489659 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP Stack trace:
+[Mon Jan 18 14:16:12.489679 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:12.489689 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP Fatal error:  require_once(): Failed opening required '/home/alicia/explore/public/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:16:12.489695 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP Stack trace:
+[Mon Jan 18 14:16:12.489700 2016] [:error] [pid 7610] [client 127.0.0.1:35637] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:14.863540 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP Warning:  require_once(/home/alicia/explore/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:16:14.863572 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP Stack trace:
+[Mon Jan 18 14:16:14.863589 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:14.863597 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP Fatal error:  require_once(): Failed opening required '/home/alicia/explore/public/../vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/alicia/explore/public/index.php on line 3
+[Mon Jan 18 14:16:14.863601 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP Stack trace:
+[Mon Jan 18 14:16:14.863604 2016] [:error] [pid 7611] [client 127.0.0.1:35638] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:38.991418 2016] [:error] [pid 7613] [client 127.0.0.1:35663] PHP Fatal error:  Class 'HRQLS\\Bootstrap' not found in /home/alicia/explore/public/index.php on line 5
+[Mon Jan 18 14:16:38.991445 2016] [:error] [pid 7613] [client 127.0.0.1:35663] PHP Stack trace:
+[Mon Jan 18 14:16:38.991455 2016] [:error] [pid 7613] [client 127.0.0.1:35663] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:16:45.548217 2016] [:error] [pid 7614] [client 127.0.0.1:35665] PHP Fatal error:  Class 'HRQLS\\Bootstrap' not found in /home/alicia/explore/public/index.php on line 5
+[Mon Jan 18 14:16:45.548249 2016] [:error] [pid 7614] [client 127.0.0.1:35665] PHP Stack trace:
+[Mon Jan 18 14:16:45.548262 2016] [:error] [pid 7614] [client 127.0.0.1:35665] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:18:33.157658 2016] [:error] [pid 7610] [client 127.0.0.1:35667] PHP Fatal error:  Class 'HRQLS\\Bootstrap' not found in /home/alicia/explore/public/index.php on line 5
+[Mon Jan 18 14:18:33.157690 2016] [:error] [pid 7610] [client 127.0.0.1:35667] PHP Stack trace:
+[Mon Jan 18 14:18:33.157700 2016] [:error] [pid 7610] [client 127.0.0.1:35667] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:19:00.991140 2016] [:error] [pid 7611] [client 127.0.0.1:35668] PHP Fatal error:  Class 'EXPLOREHR\\Controllers\\ModulesController' not found in /home/alicia/explore/src/Explore/Bootstrap.php on line 167
+[Mon Jan 18 14:19:00.991186 2016] [:error] [pid 7611] [client 127.0.0.1:35668] PHP Stack trace:
+[Mon Jan 18 14:19:00.991203 2016] [:error] [pid 7611] [client 127.0.0.1:35668] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:19:00.991215 2016] [:error] [pid 7611] [client 127.0.0.1:35668] PHP   2. EXPLOREHR\\Bootstrap->loadModules() /home/alicia/explore/public/index.php:11
+[Mon Jan 18 14:20:21.023247 2016] [:error] [pid 7612] [client 127.0.0.1:35683] PHP Fatal error:  Call to undefined method EXPLOREHR\\Bootstrap::loadModules() in /home/alicia/explore/public/index.php on line 11
+[Mon Jan 18 14:20:21.023266 2016] [:error] [pid 7612] [client 127.0.0.1:35683] PHP Stack trace:
+[Mon Jan 18 14:20:21.023271 2016] [:error] [pid 7612] [client 127.0.0.1:35683] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 14:20:33.675717 2016] [:error] [pid 7613] [client 127.0.0.1:35684] PHP Fatal error:  Call to undefined method EXPLOREHR\\Bootstrap::loadModules() in /home/alicia/explore/public/index.php on line 11
+[Mon Jan 18 14:20:33.675759 2016] [:error] [pid 7613] [client 127.0.0.1:35684] PHP Stack trace:
+[Mon Jan 18 14:20:33.675773 2016] [:error] [pid 7613] [client 127.0.0.1:35684] PHP   1. {main}() /home/alicia/explore/public/index.php:0
+[Mon Jan 18 15:29:20.401357 2016] [core:error] [pid 8637] (13)Permission denied: [client 127.0.0.1:36446] AH00132: file permissions deny server access: /home/alicia/explore/public/js/jquery.min.js, referer: http://www.explorehr.com/
+[Mon Jan 18 15:29:22.529569 2016] [core:error] [pid 7611] (13)Permission denied: [client 127.0.0.1:36442] AH00132: file permissions deny server access: /home/alicia/explore/public/js/jquery.min.js, referer: http://www.explorehr.com/
+[Mon Jan 18 15:31:11.422374 2016] [core:error] [pid 7612] (13)Permission denied: [client 127.0.0.1:36453] AH00132: file permissions deny server access: /home/alicia/explore/public/js/jquery.min.js
