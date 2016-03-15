@@ -3,6 +3,9 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.tooltip-inner {
+    width: 100px;
+}
 .navbar {
     margin-bottom: 0px;
     border: 0px;
@@ -29,6 +32,13 @@ html, body {
 .dataIcon {
     width: 80%;
     padding: 10px 2px;
+    border-radius: 40px;
+}
+.dataIcon:hover {
+    cursor: pointer;
+}
+.selected {
+    background-color: #7A7A7A;
 }
 #map {
     height: 100%;
