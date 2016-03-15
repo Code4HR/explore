@@ -14,8 +14,8 @@ RUN a2ensite apache
 RUN a2enmod rewrite
 COPY . /var/www/html
 
-#ENV API_URL http://hercules.code4hr.org:81
-
+# you can replace this API_URL at runtime for dev/test
+# otherwise it defaults to the prod url
 ENV API_URL http://hercules.code4hr.org
 
 EXPOSE 80
