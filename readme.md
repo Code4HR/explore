@@ -18,7 +18,7 @@ _Explore: Hampton Roads_ will allow users to view and interact with data specifi
 
 #Current Status
 
-Currently, the _Explore: Hampton Roads_ web application will be sourced with Virginia Beach, VA data only.  This will allow for the collection and presentation to be worked out with data that is readily available, with other cities to be added in a modular format.
+Currently, the _Explore: Hampton Roads_ web application will be sourced with Hampton, VA data only to leverage the Hampton Crime API.  This will allow for the collection and presentation to be worked out with data that is readily available, with other cities to be added in a modular format.
 
 
 #Team
