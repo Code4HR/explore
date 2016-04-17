@@ -49,4 +49,4 @@ Temporary Items
 logs/
 
 # Docker Compose
-*.yml
+docker-compose.yml
