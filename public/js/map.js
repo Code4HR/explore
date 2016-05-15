@@ -32,9 +32,11 @@ function initAutocomplete() {
         ];
         var mapOptions = {
             zoom: 11,
+            zoomControl: true,
             center: new google.maps.LatLng(36.9487874, -76.2121092),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: styleArray
+            styles: styleArray,
+            mapTypeControl: false
         };
         map = new google.maps.Map(document.getElementById('map'),
             mapOptions);
