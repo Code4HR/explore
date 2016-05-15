@@ -47,3 +47,6 @@ Temporary Items
 
 # Logs
 logs/
+
+# Docker Compose
+docker-compose.yml
