@@ -53,6 +53,13 @@ class Bootstrap
      * @var array
      */
     private $config;
+    
+    /**
+     * The Hercules API URL
+     *
+     * @var simplexml_load_string
+     */
+    private $apiUrl;
 
     /**
      * The application log provider.
@@ -81,6 +88,17 @@ class Bootstrap
     public function __construct(Application $app)
     {
         $this->app = $app;
+        $this->apiUrl = getenv('API_URL');
+    }
+    
+    /**
+     * Returns the base Hercules API URL.
+     *
+     * @return $apiUrl
+     */
+    public function getApiUrl()
+    {
+        return $this->apiUrl;
     }
 
     /**
