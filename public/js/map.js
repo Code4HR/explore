@@ -2,6 +2,7 @@ function initAutocomplete() {
 
     var map = null;
     var bikeLayer = new google.maps.BicyclingLayer();
+    var trafficLayer = new google.maps.TrafficLayer();
 
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
@@ -45,7 +46,7 @@ function initAutocomplete() {
 
     $('#crimeIcon').on('click', function () {
         if ($('#crimeIcon').hasClass('selected')) {
-            document.getElementById('crimeIcon').className = document.getElementById('crimeIcon').className.replace(/\b selected\b/,'')
+            document.getElementById('crimeIcon').className = document.getElementById('crimeIcon').className.replace(/\b selected\b/,'');
         } else {
             document.getElementById('crimeIcon').className += ' selected';
         }
@@ -53,7 +54,7 @@ function initAutocomplete() {
 
     $('#schoolIcon').on('click', function () {
         if ($('#schoolIcon').hasClass('selected')) {
-            document.getElementById('schoolIcon').className = document.getElementById('schoolIcon').className.replace(/\b selected\b/,'')
+            document.getElementById('schoolIcon').className = document.getElementById('schoolIcon').className.replace(/\b selected\b/,'');
         } else {
             document.getElementById('schoolIcon').className += ' selected';
         }
@@ -61,7 +62,7 @@ function initAutocomplete() {
 
     $('#foodIcon').on('click', function () {
         if ($('#foodIcon').hasClass('selected')) {
-            document.getElementById('foodIcon').className = document.getElementById('foodIcon').className.replace(/\b selected\b/,'')
+            document.getElementById('foodIcon').className = document.getElementById('foodIcon').className.replace(/\b selected\b/,'');
         } else {
             document.getElementById('foodIcon').className += ' selected';
         }
@@ -69,7 +70,7 @@ function initAutocomplete() {
 
     $('#housingIcon').on('click', function () {
         if ($('#housingIcon').hasClass('selected')) {
-            document.getElementById('housingIcon').className = document.getElementById('housingIcon').className.replace(/\b selected\b/,'')
+            document.getElementById('housingIcon').className = document.getElementById('housingIcon').className.replace(/\b selected\b/,'');
         } else {
             document.getElementById('housingIcon').className += ' selected';
         }
@@ -78,11 +79,21 @@ function initAutocomplete() {
     $('#bikeIcon').on('click', function () {
         if ($('#bikeIcon').hasClass('selected')) {
             bikeLayer.setMap(null);
-            document.getElementById('bikeIcon').className = document.getElementById('bikeIcon').className.replace(/\b selected\b/,'')
+            document.getElementById('bikeIcon').className = document.getElementById('bikeIcon').className.replace(/\b selected\b/,'');
         } else {
             bikeLayer.setMap(map);
             document.getElementById('bikeIcon').className += ' selected';
         }
     });
+    
+    $('#trafficIcon').on('click', function() {
+        if ($('#trafficIcon').hasClass('selected')) {
+            trafficLayer.setMap(null);
+            document.getElementById('trafficIcon').className = document.getElementById('trafficIcon').className.replace(/\b selected\b/,'');
+        } else {
+            trafficLayer.setMap(map);
+            document.getElementById('trafficIcon').className += ' selected';
+        }
+    })
 
 }
