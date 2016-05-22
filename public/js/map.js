@@ -6,7 +6,19 @@ function initAutocomplete() {
 
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
+        resize();
     });
+    
+    $(window).on('resize', function () {
+        resize();
+    });
+    
+    // Still have to make this functionality work with the expansion of the
+    // sub menu. Currently this runs before the sub menu expands... Have to 
+    // figure out how to trigger this after the Bootstrap function.
+    // $('.navbar-toggle').on('change', function() {
+    //     resize();
+    // });
 
     function initialize() {
 
@@ -94,6 +106,14 @@ function initAutocomplete() {
             trafficLayer.setMap(map);
             document.getElementById('trafficIcon').className += ' selected';
         }
-    })
+    });
+
+    function resize() {
+        var windowHeight = $(window).height();
+        var navHeight = $('.navbar').height();
+        var mapHeight = windowHeight - navHeight;
+        $('#map').css({'height': mapHeight + 'px'});
+        $('.dataSelect').css({'height': mapHeight + 'px'});
+    }
 
 }
