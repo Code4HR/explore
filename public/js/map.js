@@ -15,7 +15,7 @@ function initAutocomplete() {
             resize();
         });
 
-        // Still have to make this functionality work with the expansion of the
+        // TODO Still have to make this functionality work with the expansion of the
         // sub menu. Currently this runs before the sub menu expands... Have to 
         // figure out how to trigger this after the Bootstrap function.
         // $('.navbar-toggle').on('change', function() {
@@ -87,32 +87,10 @@ function initAutocomplete() {
         $('#foodIcon').on('click', function () {
             if ($('#foodIcon').hasClass('selected')) {
                 document.getElementById('foodIcon').className = document.getElementById('foodIcon').className.replace(/\b selected\b/, '');
-                for (var i = 0; i < foodSanitationMarkers.length; i++) {
-                    foodSanitationMarkers[i].setMap(null);
-                }
-                foodSanitationMarkers = [];
+                removeFoodSanitationData();
             } else {
                 document.getElementById('foodIcon').className += ' selected';
-                $.ajax({
-                    method: 'GET',
-                    url: 'http://hercules.code4hr.org/food/sanitation',
-                    data: foodSanitationData,
-                    crossDomain: true,
-                    dataType: 'jsonp',
-                    success: function (foodSanitationData) {
-                        for (var elem = 0, max = foodSanitationData.length; elem < max; elem++) {
-                            if (foodSanitationData[elem].latitude !== null && foodSanitationData[elem].longitude !== null) {
-                                foodSanitationMarker = new google.maps.Marker({
-                                    position: { lat: foodSanitationData[elem].latitude, lng: foodSanitationData[elem].longitude },
-                                    title: foodSanitationData[elem].name,
-                                    map: map,
-                                    icon: foodSanitationImage
-                                })
-                                foodSanitationMarkers.push(foodSanitationMarker);
-                            };
-                        }
-                    }
-                });
+                addFoodSanitationData();
             }
         });
 
@@ -150,6 +128,40 @@ function initAutocomplete() {
             var mapHeight = windowHeight - navHeight;
             $('#map').css({ 'height': mapHeight + 'px' });
             $('.dataSelect').css({ 'height': mapHeight + 'px' });
+        }
+
+        function addFoodSanitationData() {
+            $.ajax({
+                method: 'GET',
+                url: 'http://localhost:88/food/sanitation',
+                data: foodSanitationData,
+                crossDomain: true,
+                dataType: 'jsonp',
+                success: function (foodSanitationData) {
+                    setFoodSanitationMarkers(foodSanitationData);
+                }
+            });
+        }
+
+        function setFoodSanitationMarkers(foodSanitationData) {
+            for (var i = 0, max = foodSanitationData.length; i < max; i++) {
+                if (foodSanitationData[i].latitude !== null && foodSanitationData[i].longitude !== null) {
+                    foodSanitationMarker = new google.maps.Marker({
+                        position: { lat: foodSanitationData[i].latitude, lng: foodSanitationData[i].longitude },
+                        title: foodSanitationData[i].name,
+                        map: map,
+                        icon: foodSanitationImage
+                    })
+                    foodSanitationMarkers.push(foodSanitationMarker);
+                };
+            }
+        }
+
+        function removeFoodSanitationData() {
+            for (var i = 0; i < foodSanitationMarkers.length; i++) {
+                foodSanitationMarkers[i].setMap(null);
+            }
+            foodSanitationMarkers = [];
         }
     });
 
