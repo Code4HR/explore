@@ -1,11 +1,25 @@
 $(document).ready(function () {
-    var crimeData;
+    var crimeData, foodSanitizationData;
+    
+    // TODO Still need to figure out how to get the API_URL environment variable from PHP to javascript
     $.ajax({
         method: 'GET',
-        url: 'http://elasticsearch.code4hr.org:33366/crime/crimes/_search',
+        url: 'http://hercules.code4hr.org/crime/Hampton',
         data: crimeData,
-        dataType: 'json',
-        success: function () {
+        crossDomain: true,
+        dataType: 'jsonp',
+        success: function (crimeData) {
+            // 
+        }
+    });
+            
+    $.ajax({
+        method: 'GET',
+        url: 'http://hercules.code4hr.org/food/sanitation',
+        data: foodSanitizationData,
+        crossDomain: true,
+        dataType: 'jsonp',
+        success: function(foodSanitizationData) {
             // 
         }
     });
