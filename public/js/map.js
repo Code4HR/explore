@@ -3,7 +3,9 @@ function initAutocomplete() {
     var map = null;
     var bikeLayer = new google.maps.BicyclingLayer();
     var trafficLayer = new google.maps.TrafficLayer();
-    var crimeheatmap, crimeData;
+    var crimeheatmap, crimeData, foodSanitationData, foodSanitationMarker;
+    var foodSanitationMarkers = [];
+    var foodSanitationImage = "../images/foodSanitationImage.png"
 
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
@@ -85,6 +87,10 @@ function initAutocomplete() {
         $('#foodIcon').on('click', function () {
             if ($('#foodIcon').hasClass('selected')) {
                 document.getElementById('foodIcon').className = document.getElementById('foodIcon').className.replace(/\b selected\b/, '');
+                for (var i = 0; i < foodSanitationMarkers.length; i++) {
+                    foodSanitationMarkers[i].setMap(null);
+                }
+                foodSanitationMarkers = [];
             } else {
                 document.getElementById('foodIcon').className += ' selected';
                 $.ajax({
@@ -94,7 +100,17 @@ function initAutocomplete() {
                     crossDomain: true,
                     dataType: 'jsonp',
                     success: function (foodSanitationData) {
-                        // 
+                        for (var elem = 0, max = foodSanitationData.length; elem < max; elem++) {
+                            if (foodSanitationData[elem].latitude !== null && foodSanitationData[elem].longitude !== null) {
+                                foodSanitationMarker = new google.maps.Marker({
+                                    position: { lat: foodSanitationData[elem].latitude, lng: foodSanitationData[elem].longitude },
+                                    title: foodSanitationData[elem].name,
+                                    map: map,
+                                    icon: foodSanitationImage
+                                })
+                                foodSanitationMarkers.push(foodSanitationMarker);
+                            };
+                        }
                     }
                 });
             }
