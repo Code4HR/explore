@@ -133,7 +133,7 @@ function initAutocomplete() {
         function addFoodSanitationData() {
             $.ajax({
                 method: 'GET',
-                url: 'http://hampton.code4hr.org/food/sanitation',
+                url: 'http://hercules.code4hr.org/food/sanitation',
                 data: foodSanitationData,
                 crossDomain: true,
                 dataType: 'jsonp',
