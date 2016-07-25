@@ -3,7 +3,10 @@ function initAutocomplete() {
     var map = null;
     var bikeLayer = new google.maps.BicyclingLayer();
     var trafficLayer = new google.maps.TrafficLayer();
-    var crimeheatmap, crimeData, foodSanitationData, foodSanitationMarker;
+    var crimeheatmap, crimeData;
+    var schoolsData, schoolMarker, schoolRating;
+    var schoolMarkers = [];
+    var foodSanitationData, foodSanitationMarker;
     var foodSanitationMarkers = [];
     var foodSanitationImage = "../images/foodSanitationImage.png"
 
@@ -79,8 +82,10 @@ function initAutocomplete() {
         $('#schoolIcon').on('click', function () {
             if ($('#schoolIcon').hasClass('selected')) {
                 document.getElementById('schoolIcon').className = document.getElementById('schoolIcon').className.replace(/\b selected\b/, '');
+                removeSchoolDataMarkers();
             } else {
                 document.getElementById('schoolIcon').className += ' selected';
+                addSchoolData();
             }
         });
 
@@ -128,6 +133,47 @@ function initAutocomplete() {
             var mapHeight = windowHeight - navHeight;
             $('#map').css({ 'height': mapHeight + 'px' });
             $('.dataSelect').css({ 'height': mapHeight + 'px' });
+        }
+
+        function addSchoolData() {
+            $.ajax({
+                method: 'GET',
+                url: 'http://hercules.code4hr.org/schools',
+                data: schoolsData,
+                crossDomain: true,
+                dataType: 'jsonp',
+                success: function (schoolsData) {
+                    addSchoolDataMarkers(schoolsData.data);
+                }
+            });
+        }
+
+        function addSchoolDataMarkers(schoolsData) {
+            for (var i = 0, imax = schoolsData.length; i < imax; i++) {
+                for (var j = 0, jmax = schoolsData[i].length; j < jmax; j++) {
+                    if (schoolsData[i][j].lat !== null && schoolsData[i][j].lon !== null) {
+                        schoolRating = '?';
+                        if ('gsRating' in schoolsData[i][j] || 'parentRating' in schoolsData[i][j]) {
+                            schoolRating = 'gsRating' in schoolsData[i][j] ? schoolsData[i][j].gsRating : schoolsData[i][j].parentRating;
+                        }
+                        schoolMarker = new google.maps.Marker({
+                            position: { lat: Number(schoolsData[i][j].lat), lng: Number(schoolsData[i][j].lon) },
+                            label: schoolRating,
+                            title: schoolsData[i][j].name,
+                            map: map
+                        })
+                        schoolMarkers.push(schoolMarker);
+                    }
+                }
+            }
+        }
+
+        function removeSchoolDataMarkers() {
+            for (var i = 0; i < schoolMarkers.length; i++) {
+                schoolMarkers[i].setMap(null);
+            }
+            
+            schoolMarkers = [];
         }
 
         function addFoodSanitationData() {
