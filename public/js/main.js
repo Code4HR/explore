@@ -1,80 +1,82 @@
 $(document).ready(function () {
 
-    // Chart creation
+    // *** Chart creation ***
+
+    // Crimes by severity
     $(document).ready(function () {
-        new Chart($('#crimeBySeverity').get(0).getContext('2d')).Bar(crimesBySeverity, {
-            tooltipFillColor: 'rgba(51, 51, 51, 0.55)',
-            responsive: true,
-            barDatasetSpacing: 6,
-            barValueSpacing: 5
-        });
+        new Chart($('#crimeBySeverity'), {
+            type: 'bar',
+            data: crimesBySeverity
+        })
     });
 
+    // Crimes by type
     $(document).ready(function () {
-        window.myPie = new Chart(document.getElementById('crimeByType').getContext('2d')).Pie(crimeByType, {
-            responsive: true,
-            tooltipFillColor: 'rgba(51, 51, 51, 0.55)'
-        });
+        new Chart($('#crimeByType'), {
+            type: 'pie',
+            data: crimeByType
+        })
     });
 
-    // Data Models
+    // Population by age
+    $(document).ready(function () {
+        new Chart($('#populationByAge'), {
+            type: 'doughnut',
+            data: populationByAge
+        })
+    });
+
+    // // Population by race
+    $(document).ready(function () {
+        new Chart($('#populationByRace'), {
+            type: 'horizontalBar',
+            data: populationByRace
+        })
+    });
+
+    // *** Data Models ***
+
     var crimesBySeverity = {
         labels: ['Felony', 'Misdemeanor', 'Report', 'Citation'],
         datasets: [
             {
-                fillColor: '#26B99A',
-                strokeColor: '#26B99A',
-                highlightFill: '#36CAAB',
-                highlightStroke: '#36CAAB',
-                data: [171, 75, 26, 1]
+                backgroundColor: '#26B99A',
+                data: [171, 75, 26, 1],
             }
-        ],
-    }
+        ]
+    };
 
-    var crimeByType = [
-        {
-            value: 154,
-            color: '#6EC9AC',
-            highlight: '#d6dbe0',
-            label: 'Theft'
-        },
-        {
-            value: 42,
-            color: '#7715F7',
-            highlight: '#d6dbe0',
-            label: 'Property Crime'
-        },
-        {
-            value: 31,
-            color: '#316BBF',
-            highlight: '#d6dbe0',
-            label: 'Assault'
-        },
-        {
-            value: 17,
-            color: '#778899',
-            highlight: '#d6dbe0',
-            label: 'Breaking and Entering'
-        },
-        {
-            value: 15,
-            color: '#085F61',
-            highlight: '#d6dbe0',
-            label: 'Robbery'
-        },
-        {
-            value: 13,
-            color: '#0F9CE5',
-            highlight: '#d6dbe0',
-            label: 'Theft of Vehicle'
-        },
-        {
-            value: 1,
-            color: '#47515b',
-            highlight: '#d6dbe0',
-            label: 'Assault with Deadly Weapon'
-        }
-    ];
+    var crimeByType = {
+        labels: ['Theft', 'Property Crime', 'Assault', 'Breaking and Entering', 'Robbery', 'Theft of Vehicle', 'Assault with Deadly Weapon'],
+        datasets: [
+            {
+                data: [154, 42, 31, 17, 15, 13, 1],
+                backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5', '#47515b'],
+                hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
+            }
+        ]
+    };
+
+    var populationByAge = {
+        labels: ['Under 14', '15 to 29', '30 to 44', '45 to 59', '60 to 74', '75 and Over'],
+        datasets: [
+            {
+                data: [323533, 395871, 320429, 350098, 190527, 85852],
+                backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5'],
+                hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
+            }
+        ]
+    };
+
+    var populationByRace = {
+        labels: ['White', 'Black', 'Asian', 'Multiple Races', 'Other', 'American Indian', 'Pacific Islander'],
+        datasets: [
+            {
+                backgroundColor: '#316BBF',
+                data: [982511, 532025, 57948, 57205, 27772, 6790, 2059]
+            }
+        ]
+    };
 
 // Leaving these here for reference of different chart types
     // var randomScalingFactor = function () {
