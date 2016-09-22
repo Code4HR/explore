@@ -1,9 +1,11 @@
 function initAutocomplete() {
 
     var map = null;
+    var Datas = [];
     var bikeLayer = new google.maps.BicyclingLayer();
     var trafficLayer = new google.maps.TrafficLayer();
     var crimeheatmap, crimeData;
+    var crimeHeatMapData = [];
     var schoolsData, schoolMarker, schoolRating;
     var schoolMarkers = [];
     var foodSanitationData, foodSanitationMarker;
@@ -49,6 +51,8 @@ function initAutocomplete() {
                 },
             ];
             var mapOptions = {
+                minZoom: 8,
+                maxZoom: 20,
                 zoom: 11,
                 zoomControl: true,
                 center: new google.maps.LatLng(36.9487874, -76.2121092),
@@ -58,12 +62,22 @@ function initAutocomplete() {
             };
             map = new google.maps.Map(document.getElementById('map'),
                 mapOptions);
+           var pointArray = new google.maps.MVCArray(Datas);
+           crimeheatmap = new google.maps.visualization.HeatmapLayer({
+               data: pointArray,
+               maxIntensity: 20,
+               dissipating: true
+            });
+            crimeheatmap.setMap(map);
         }
         google.maps.event.addDomListener(window, 'load', initialize);
 
         $('#crimeIcon').on('click', function () {
             if ($('#crimeIcon').hasClass('selected')) {
                 document.getElementById('crimeIcon').className = document.getElementById('crimeIcon').className.replace(/\b selected\b/, '');
+                // Reset heat map data to empty and update the map to remove the data points
+                crimeHeatMapData = [];
+                crimeheatmap.set('data', crimeHeatMapData);
             } else {
                 document.getElementById('crimeIcon').className += ' selected';
                 $.ajax({
@@ -73,7 +87,12 @@ function initAutocomplete() {
                     crossDomain: true,
                     dataType: 'jsonp',
                     success: function (crimeData) {
-                        // 
+                        // Get the crime data from Hercules and populate the crime heatmap
+                        crimeData = crimeData.data;
+                        for (var elem = 0, max = crimeData.length; elem < max; elem++) {
+                            crimeHeatMapData.push({ location: new google.maps.LatLng(crimeData[elem].location.lat, crimeData[elem].location.lon), weight: crimeData[elem].class });
+                        }
+                        crimeheatmap.set('data', crimeHeatMapData);
                     }
                 });
             }
@@ -172,7 +191,7 @@ function initAutocomplete() {
             for (var i = 0; i < schoolMarkers.length; i++) {
                 schoolMarkers[i].setMap(null);
             }
-            
+
             schoolMarkers = [];
         }
 
