@@ -57,6 +57,120 @@
 
             <div class='clearfix'></div>
 
+            <!--School Section-->
+            <div class='row'>
+                <br /><br /><br />
+                <div class='clearfix'></div>
+
+                <div class='row' id='schools'>
+                    <div class='col-md-12 text-center'>
+                        <h1>Explore Schools</h1>
+                        <hr />
+                    </div>
+                    <div class='col-md-4 col-sm-12 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>Rating by Enrollment Number</h4>
+                                <div class='clearfix'></div>
+                            </div>
+                            <div class='x_content'>
+                                <canvas id='schoolRatingByEnrollment'></canvas>
+                            </div>
+                        </div>
+                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore Schools</a></p>
+                    </div>
+
+                    <!--About School Data-->
+                    <div class='col-md-4 col-sm-12 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>About the Data</h4>
+                                <div class='clearfix'></div>
+                            </div>
+                            <div class='x_content'>
+                                <p>The current school information is sourced from the <a href="http://www.greatschools.org/api/docs/main.page">GreatSchools API</a>.
+                                    The data contains information such as the school district, grade ranges, GreatSchools
+                                    rating, number of enrollment, and more.</p>
+                                <div class='clearfix'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-md-4 col-sm-12  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>Rating by City</h4>
+                                <div class='clearfix'></div>
+                            </div>
+                            <div class='x_content'>
+                                <canvas id='schoolRatingByCity'></canvas>
+                            </div>
+                        </div>
+                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore Schools</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class='clearfix'></div>
+
+            <!--People Section-->
+            <div class='row'>
+                <br /><br /><br />
+                <div class='clearfix'></div>
+
+                <div class='row' id='people'>
+                    <div class='col-md-12 text-center'>
+                        <h1>Explore People</h1>
+                        <hr />
+                    </div>
+                    <div class='col-md-4 col-sm-12 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>Population By Age</h4>
+                                <div class='clearfix'></div>
+                            </div>
+                            <div class='x_content'>
+                                <canvas id='populationByAge'></canvas>
+                            </div>
+                        </div>
+                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore People</a></p>
+                    </div>
+
+                    <div class='col-md-4 col-sm-12 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>About the Data</h4>
+                                <div class='clearfix'></div>
+                            </div>
+                            <div class='x_content'>
+                                <p>The data about the population of Hampton Roads is sourced from the 
+                                    <a href='http://virginialmi.com/report_center/community_profiles/5109000323.pdf' target='_blank'>
+                                        Community Profile for Hampton Roads
+                                    </a>. The data applies to the 2010 Census for PDC 23.
+                                </p>
+                                <div class='clearfix'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-md-4 col-sm-12  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
+                        <div class='x_panel'>
+                            <div class='x_title'>
+                                <h4>Population by Race</h4>
+                            </div>
+                            <div class='x_content'>
+                                <canvas id='populationByRace'></canvas>
+                            </div>
+                        </div>
+                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore People</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class='clearfix'></div>
+
             <!--Crime Section-->
             <div class='row'>
                 <br /><br /><br />
@@ -116,120 +230,6 @@
 
             <div class='clearfix'></div>
 
-            <!--School Section-->
-            <div class='row'>
-                <br /><br /><br />
-                <div class='clearfix'></div>
-
-                <div class='row' id='schools'>
-                    <div class='col-md-12 text-center'>
-                        <h1>Explore Schools</h1>
-                        <hr />
-                    </div>
-                    <div class='col-md-4 col-sm-12 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>Rating by Enrollment Number</h4>
-                                <div class='clearfix'></div>
-                            </div>
-                            <div class='x_content'>
-                                <canvas id='schoolRatingByEnrollment'></canvas>
-                            </div>
-                        </div>
-                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore Schools</a></p>
-                    </div>
-
-                    <!--About School Data-->
-                    <div class='col-md-4 col-sm-12 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>About the Data</h4>
-                                <div class='clearfix'></div>
-                            </div>
-                            <div class='x_content'>
-                                <p>The current school information is sourced from the <a href="http://www.greatschools.org/api/docs/main.page">GreatSchools API</a>.
-                                    The data contains information such as the school district, grade ranges, GreatSchools
-                                    rating, number of enrollment, and more.</p>
-                                <div class='clearfix'></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='col-md-4 col-sm-12  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>Rating by City</h4>
-                                <div class='clearfix'></div>
-                            </div>
-                            <div class='x_content'>
-                                <canvas id='schoolRatingByCity'></canvas>
-                            </div>
-                        </div>
-                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore Schools</a></p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class='clearfix'></div>
-
-            <!--Other Section-->
-            <div class='row'>
-                <br /><br /><br />
-                <div class='clearfix'></div>
-
-                <div class='row' id='people'>
-                    <div class='col-md-12 text-center'>
-                        <h1>Explore People</h1>
-                        <hr />
-                    </div>
-                    <div class='col-md-4 col-sm-12 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>Population By Age</h4>
-                                <div class='clearfix'></div>
-                            </div>
-                            <div class='x_content'>
-                                <canvas id='populationByAge'></canvas>
-                            </div>
-                        </div>
-                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore People</a></p>
-                    </div>
-
-                    <div class='col-md-4 col-sm-12 col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>About the Data</h4>
-                                <div class='clearfix'></div>
-                            </div>
-                            <div class='x_content'>
-                                <p>The data about the population of Hampton Roads is sourced from the 
-                                    <a href='http://virginialmi.com/report_center/community_profiles/5109000323.pdf' target='_blank'>
-                                        Community Profile for Hampton Roads
-                                    </a>. The data applies to the 2010 Census for PDC 23.
-                                </p>
-                                <div class='clearfix'></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='col-md-4 col-sm-12  col-md-offset-0 col-sm-offset-0 col-xs-12 text-center'>
-                        <div class='x_panel'>
-                            <div class='x_title'>
-                                <h4>Population by Race</h4>
-                            </div>
-                            <div class='x_content'>
-                                <canvas id='populationByRace'></canvas>
-                            </div>
-                        </div>
-                        <p><a class='btn btn-lg btn-default' href='/map' role='button'><i class='glyphicon glyphicon-search'></i> Explore People</a></p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class='clearfix'></div>
-
         </div>
 
         <br /><br /><br />
@@ -238,9 +238,9 @@
         <nav class='navbar-fixed-bottom'>
             <div class='row background-white'>
                 <ul class='nav nav-tabs'>
-                    <li class='presentation'><a href='#crime'><i class='glyphicon glyphicon-eye-open'></i>  Crime</a></li>
                     <li class='presentation'><a href='#schools'><i class='glyphicon glyphicon-apple'></i>  Schools</a></li>
                     <li class='presentation'><a href='#people'><i class='glyphicon glyphicon-user'></i>  People</a></li>
+                    <li class='presentation'><a href='#crime'><i class='glyphicon glyphicon-eye-open'></i>  Crime</a></li>
                 </ul>
             </div>
         </nav>

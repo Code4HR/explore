@@ -1,78 +1,4 @@
 $(document).ready(function () {
-    // Crimes by severity
-    $(document).ready(function () {
-        var crimesBySeverity = {
-            labels: ['Felony', 'Misdemeanor', 'Report', 'Citation'],
-            datasets: [
-                {
-                    backgroundColor: '#26B99A',
-                    data: [171, 75, 26, 1],
-                }
-            ]
-        };
-
-        new Chart($('#crimeBySeverity'), {
-            type: 'bar',
-            data: crimesBySeverity
-        })
-    });
-
-    // Crimes by type
-    $(document).ready(function () {
-        var crimeByType = {
-            labels: ['Theft', 'Property Crime', 'Assault', 'Breaking and Entering', 'Robbery', 'Theft of Vehicle', 'Assault with Deadly Weapon'],
-            datasets: [
-                {
-                    data: [154, 42, 31, 17, 15, 13, 1],
-                    backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5', '#47515b'],
-                    hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
-                }
-            ]
-        };
-
-        new Chart($('#crimeByType'), {
-            type: 'pie',
-            data: crimeByType
-        })
-    });
-
-    // Population by age
-    $(document).ready(function () {
-        var populationByAge = {
-            labels: ['Under 14', '15 to 29', '30 to 44', '45 to 59', '60 to 74', '75 and Over'],
-            datasets: [
-                {
-                    data: [323533, 395871, 320429, 350098, 190527, 85852],
-                    backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5'],
-                    hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
-                }
-            ]
-        };
-
-        new Chart($('#populationByAge'), {
-            type: 'doughnut',
-            data: populationByAge
-        })
-    });
-
-    // // Population by race
-    $(document).ready(function () {
-        var populationByRace = {
-            labels: ['White', 'Black', 'Asian', 'Multiple Races', 'Other', 'American Indian', 'Pacific Islander'],
-            datasets: [
-                {
-                    backgroundColor: '#316BBF',
-                    data: [982511, 532025, 57948, 57205, 27772, 6790, 2059]
-                }
-            ]
-        };
-
-        new Chart($('#populationByRace'), {
-            type: 'horizontalBar',
-            data: populationByRace
-        })
-    });
-
     // School rating by enrollment
     $(document).ready(function () {
         var ratingByEnrollment;
@@ -188,6 +114,80 @@ $(document).ready(function () {
                 });
             }
         });
+    });
+
+    // Population by age
+    $(document).ready(function () {
+        var populationByAge = {
+            labels: ['Under 14', '15 to 29', '30 to 44', '45 to 59', '60 to 74', '75 and Over'],
+            datasets: [
+                {
+                    data: [323533, 395871, 320429, 350098, 190527, 85852],
+                    backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5'],
+                    hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
+                }
+            ]
+        };
+
+        new Chart($('#populationByAge'), {
+            type: 'doughnut',
+            data: populationByAge
+        })
+    });
+
+    // Population by race
+    $(document).ready(function () {
+        var populationByRace = {
+            labels: ['White', 'Black', 'Asian', 'Multiple Races', 'Other', 'American Indian', 'Pacific Islander'],
+            datasets: [
+                {
+                    backgroundColor: '#316BBF',
+                    data: [982511, 532025, 57948, 57205, 27772, 6790, 2059]
+                }
+            ]
+        };
+
+        new Chart($('#populationByRace'), {
+            type: 'horizontalBar',
+            data: populationByRace
+        })
+    });
+
+    // Crimes by severity
+    $(document).ready(function () {
+        var crimesBySeverity = {
+            labels: ['Felony', 'Misdemeanor', 'Report', 'Citation'],
+            datasets: [
+                {
+                    backgroundColor: '#26B99A',
+                    data: [171, 75, 26, 1],
+                }
+            ]
+        };
+
+        new Chart($('#crimeBySeverity'), {
+            type: 'bar',
+            data: crimesBySeverity
+        })
+    });
+
+    // Crimes by type
+    $(document).ready(function () {
+        var crimeByType = {
+            labels: ['Theft', 'Property Crime', 'Assault', 'Breaking and Entering', 'Robbery', 'Theft of Vehicle', 'Assault with Deadly Weapon'],
+            datasets: [
+                {
+                    data: [154, 42, 31, 17, 15, 13, 1],
+                    backgroundColor: ['#6EC9AC', '#7715F7', '#316BBF', '#778899', '#085F61', '#0F9CE5', '#47515b'],
+                    hoverBackgroundColor: ['#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0', '#d6dbe0']
+                }
+            ]
+        };
+
+        new Chart($('#crimeByType'), {
+            type: 'pie',
+            data: crimeByType
+        })
     });
 
 });
