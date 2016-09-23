@@ -110,7 +110,7 @@ $(document).ready(function () {
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Number of Enrollment'
+                                labelString: 'Students Enrolled'
                             },
                             ticks: {
                                 stepSize: 250

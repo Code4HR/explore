@@ -5,11 +5,13 @@ Explore: Hampton Roads
 
 _Explore: Hampton Roads_ is a frontend web application sourced by the [hercules API](https://github.com/Code4HR/hercules).
 
-The project was the Best In Show winner at the fall 2015 Hack to Help Hampton Roads hackathon, organized by Dominion Enterprises & Code for Hampton Roads. DE donated $15,000 to Code for America to help usher this project into a useful production system.
+The project was the Best In Show winner at the fall 2015 Hack to Help Hampton Roads hackathon, organized by Dominion Enterprises & Code for Hampton Roads. 
+DE donated $15,000 to Code for America to help usher this project into a useful production system.
 
 #The Vision
 
-_Explore: Hampton Roads_ will allow users to view and interact with data specific to their community.  _Explore: Hampton Roads_ will be sourced with Crime, School, and Housing data allowing users to..
+_Explore: Hampton Roads_ will allow users to view and interact with data specific to their community.  
+_Explore: Hampton Roads_ will be sourced with School, Census, and Crime data allowing users to..
 
 * Collect data from different sources into one, easily accessible location
 * See how different data sources interact for deeper insights
@@ -18,7 +20,10 @@ _Explore: Hampton Roads_ will allow users to view and interact with data specifi
 
 #Current Status
 
-Currently, the _Explore: Hampton Roads_ web application will be sourced with Hampton, VA data only to leverage the Hampton Crime API.  This will allow for the collection and presentation to be worked out with data that is readily available, with other cities to be added in a modular format.
+Currently, the _Explore: Hampton Roads_ web application will be sourced with Hampton, VA data only to leverage the Hampton Crime API.  
+This will allow for the collection and presentation to be worked out with data that is readily available, with other cities to be added in a modular format. 
+School data has been sourced from the [GreatSchools API](http://www.greatschools.org/api/docs/main.page) for the 6 main cities of Hamtpon Roads. 
+Census data has been gathered manually from the [Community Profile for Hampton Roads](http://virginialmi.com/report_center/community_profiles/5109000323.pdf).
 
 
 #Team
