@@ -82,6 +82,8 @@ function initAutocomplete() {
         }
         google.maps.event.addDomListener(window, 'load', initialize);
 
+        var infowindow = new google.maps.InfoWindow();
+
         $('#crimeIcon').on('click', function () {
             if ($('#crimeIcon').hasClass('selected')) {
                 document.getElementById('crimeIcon').className = document.getElementById('crimeIcon').className.replace(/\b selected\b/, '');
@@ -182,6 +184,7 @@ function initAutocomplete() {
         }
 
         function addSchoolDataMarkers(schoolsData) {
+            var message;
             for (var i = 0, imax = schoolsData.length; i < imax; i++) {
                 for (var j = 0, jmax = schoolsData[i].length; j < jmax; j++) {
                     if (schoolsData[i][j].lat !== null && schoolsData[i][j].lon !== null) {
@@ -193,12 +196,67 @@ function initAutocomplete() {
                             position: { lat: Number(schoolsData[i][j].lat), lng: Number(schoolsData[i][j].lon) },
                             label: schoolRating,
                             title: schoolsData[i][j].name,
-                            map: map
-                        })
+                            map: map,
+                            clickable: true
+                        });
+
+                        message = createSchoolInfoWindowContent(schoolsData[i][j]);
+
+                        attachMessage(schoolMarker, message);
                         schoolMarkers.push(schoolMarker);
                     }
                 }
             }
+        }
+
+        // This function creates the content to display in the info window for each school marker
+        function createSchoolInfoWindowContent(school) {
+            var message = '';
+            if (school.name) {
+                message += '<b>School:</b> ' + school.name;
+            }
+            if (school.gsRating) {
+                message += '<br /><b>GreatSchools Rating:</b> ' + school.gsRating + '/10';
+            }
+            if (school.parentRating) {
+                message += '<br /><b>Parent Rating:</b> ' + school.parentRating + '/5';
+            }
+            if (school.type) {
+                message += '<br /><b>Type:</b> ' + capitalize(school.type);
+            }
+            if (school.gradeRange) {
+                message += '<br /><b>Grade Range:</b> ' + school.gradeRange;
+            }
+            if (school.district) {
+                message += '<br /><b>School District:</b> ' + school.district;
+            }
+            if (school.enrollment) {
+                message += '<br /><b>Number of Students Enrolled:</b> ' + school.enrollment;
+            }
+            if (school.address) {
+                message += '<br /><b>Address:</b> ' + school.address;
+            }
+            if (school.phone) {
+                message += '<br /><b>Phone Number:</b> ' + school.phone;
+            }
+            if (school.website) {
+                message += '<br /><a href="' + school.website + '" target="_blank">School Website</a>';
+            }
+            if (school.overviewLink) {
+                message += '<br /><a href="' + school.overviewLink + '" target="_blank">Learn More at GreatSchools.org</a>';
+            }
+
+            return message;
+        }
+
+        // Attaches an info window to a marker with the provided message. When the marker is clicked,
+        // any existing info windows will close and the new info window will open with the message.
+        function attachMessage(marker, message) {
+            marker.addListener('click', function () {
+                infowindow.close();
+                infowindow.setContent(message);
+                infowindow.open(marker.get('map'), marker);
+            });
         }
 
         function removeSchoolDataMarkers() {
@@ -257,5 +315,9 @@ function initAutocomplete() {
                 }
             }
         }
+
+        function capitalize(capitalizeThis) {
+            return capitalizeThis.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+        };
     });
 }
