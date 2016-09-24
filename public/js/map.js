@@ -62,13 +62,23 @@ function initAutocomplete() {
             };
             map = new google.maps.Map(document.getElementById('map'),
                 mapOptions);
-           var pointArray = new google.maps.MVCArray(Datas);
-           crimeheatmap = new google.maps.visualization.HeatmapLayer({
-               data: pointArray,
-               maxIntensity: 20,
-               dissipating: true
+            var pointArray = new google.maps.MVCArray(Datas);
+            crimeheatmap = new google.maps.visualization.HeatmapLayer({
+                data: pointArray,
+                maxIntensity: 20,
+                dissipating: true
             });
             crimeheatmap.setMap(map);
+            google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
+                var selection = getUrlParameter('selection');
+
+                if (selection == 'crime') {
+                    populateCrime();
+                }
+                if (selection == 'school') {
+                    populateSchools();
+                }
+            });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -79,22 +89,7 @@ function initAutocomplete() {
                 crimeHeatMapData = [];
                 crimeheatmap.set('data', crimeHeatMapData);
             } else {
-                document.getElementById('crimeIcon').className += ' selected';
-                $.ajax({
-                    method: 'GET',
-                    url: 'http://hercules.code4hr.org/crime/Hampton',
-                    data: crimeData,
-                    crossDomain: true,
-                    dataType: 'jsonp',
-                    success: function (crimeData) {
-                        // Get the crime data from Hercules and populate the crime heatmap
-                        crimeData = crimeData.data;
-                        for (var elem = 0, max = crimeData.length; elem < max; elem++) {
-                            crimeHeatMapData.push({ location: new google.maps.LatLng(crimeData[elem].location.lat, crimeData[elem].location.lon), weight: crimeData[elem].class });
-                        }
-                        crimeheatmap.set('data', crimeHeatMapData);
-                    }
-                });
+                populateCrime();
             }
         });
 
@@ -103,8 +98,7 @@ function initAutocomplete() {
                 document.getElementById('schoolIcon').className = document.getElementById('schoolIcon').className.replace(/\b selected\b/, '');
                 removeSchoolDataMarkers();
             } else {
-                document.getElementById('schoolIcon').className += ' selected';
-                addSchoolData();
+                populateSchools();
             }
         });
 
@@ -154,7 +148,27 @@ function initAutocomplete() {
             $('.dataSelect').css({ 'height': mapHeight + 'px' });
         }
 
-        function addSchoolData() {
+        function populateCrime() {
+            document.getElementById('crimeIcon').className += ' selected';
+            $.ajax({
+                method: 'GET',
+                url: 'http://hercules.code4hr.org/crime/Hampton',
+                data: crimeData,
+                crossDomain: true,
+                dataType: 'jsonp',
+                success: function (crimeData) {
+                    // Get the crime data from Hercules and populate the crime heatmap
+                    crimeData = crimeData.data;
+                    for (var elem = 0, max = crimeData.length; elem < max; elem++) {
+                        crimeHeatMapData.push({ location: new google.maps.LatLng(crimeData[elem].location.lat, crimeData[elem].location.lon), weight: crimeData[elem].class });
+                    }
+                    crimeheatmap.set('data', crimeHeatMapData);
+                }
+            });
+        }
+
+        function populateSchools() {
+            document.getElementById('schoolIcon').className += ' selected';
             $.ajax({
                 method: 'GET',
                 url: 'http://hercules.code4hr.org/schools',
@@ -228,6 +242,20 @@ function initAutocomplete() {
             }
             foodSanitationMarkers = [];
         }
-    });
 
+        function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        }
+    });
 }
