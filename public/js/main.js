@@ -48,6 +48,16 @@ $(document).ready(function () {
                                 labelString: 'Average Rating'
                             }
                         }]
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function (tooltipItems, data) {
+                                return 'Enrollment: ' + tooltipItems.yLabel;
+                            },
+                            afterLabel: function (tooltipItems, data) {
+                                return  'Rating: ' + tooltipItems.xLabel;
+                            }
+                        }
                     }
                 }
 
