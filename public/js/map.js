@@ -72,10 +72,10 @@ function initAutocomplete() {
             google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
                 var selection = getUrlParameter('selection');
 
-                if (selection == 'crime') {
+                if (selection === 'crime') {
                     populateCrime();
                 }
-                if (selection == 'school') {
+                if (selection === 'school') {
                     populateSchools();
                 }
             });
