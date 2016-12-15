@@ -96,6 +96,12 @@ function initAutocomplete() {
         });
 
         $('#schoolIcon').on('click', function () {
+            // Since the icons look nearly identical, only allow the user to select either Food or School data
+            if (document.getElementById('foodIcon').className.includes('selected')) {
+                alert('Please deselect the Food icon to see school information.');
+                return;
+            }
+
             if ($('#schoolIcon').hasClass('selected')) {
                 document.getElementById('schoolIcon').className = document.getElementById('schoolIcon').className.replace(/\b selected\b/, '');
                 removeSchoolDataMarkers();
@@ -105,6 +111,12 @@ function initAutocomplete() {
         });
 
         $('#foodIcon').on('click', function () {
+            // Since the icons look nearly identical, only allow the user to select either Food or School data
+            if (document.getElementById('schoolIcon').className.includes('selected')) {
+                alert('Please deselect the School icon to see food information.');
+                return;
+            }
+
             if ($('#foodIcon').hasClass('selected')) {
                 document.getElementById('foodIcon').className = document.getElementById('foodIcon').className.replace(/\b selected\b/, '');
                 removeFoodSanitationData();
@@ -155,10 +167,15 @@ function initAutocomplete() {
             $.ajax({
                 method: 'GET',
                 url: 'http://hercules.code4hr.org/crime/Hampton',
+                asynch: false,
+                beforeSend: function(){
+                    $('#loadingMask').css('visibility', 'visible');
+                },
                 data: crimeData,
                 crossDomain: true,
                 dataType: 'jsonp',
                 success: function (crimeData) {
+                    $('#loadingMask').css('visibility', 'hidden');
                     // Get the crime data from Hercules and populate the crime heatmap
                     crimeData = crimeData.data;
                     for (var elem = 0, max = crimeData.length; elem < max; elem++) {
@@ -174,10 +191,15 @@ function initAutocomplete() {
             $.ajax({
                 method: 'GET',
                 url: 'http://hercules.code4hr.org/schools',
+                asynch: false,
+                beforeSend: function(){
+                    $('#loadingMask').css('visibility', 'visible');
+                },
                 data: schoolsData,
                 crossDomain: true,
                 dataType: 'jsonp',
                 success: function (schoolsData) {
+                    $('#loadingMask').css('visibility', 'hidden');
                     addSchoolDataMarkers(schoolsData.data);
                 }
             });
@@ -271,27 +293,67 @@ function initAutocomplete() {
             $.ajax({
                 method: 'GET',
                 url: 'http://hercules.code4hr.org/food/sanitation',
+                asynch: false,
+                beforeSend :function(){
+                    $("#loadingMask").css('visibility', 'visible');
+                },
                 data: foodSanitationData,
                 crossDomain: true,
                 dataType: 'jsonp',
                 success: function (foodSanitationData) {
+                    $("#loadingMask").css('visibility', 'hidden');
                     setFoodSanitationMarkers(foodSanitationData);
                 }
             });
         }
 
         function setFoodSanitationMarkers(foodSanitationData) {
+            var foodMessage;
             for (var i = 0, max = foodSanitationData.length; i < max; i++) {
-                if (foodSanitationData[i].latitude !== null && foodSanitationData[i].longitude !== null) {
+                if (foodSanitationData[i].latitude !== null && foodSanitationData[i].longitude !== null && foodSanitationData[i].score !== null) {
                     foodSanitationMarker = new google.maps.Marker({
-                        position: { lat: foodSanitationData[i].latitude, lng: foodSanitationData[i].longitude },
+                        position: { lat: Number(foodSanitationData[i].latitude), lng: Number(foodSanitationData[i].longitude)},
+                        label: parseInt(foodSanitationData[i].score).toString(),
                         title: foodSanitationData[i].name,
                         map: map,
-                        icon: foodSanitationImage
-                    })
+                        clickable: true
+                    });
+
+                    foodMessage = createFoodInfoWindowContent(foodSanitationData[i]);
+
+                    attachMessage(foodSanitationMarker, foodMessage);
                     foodSanitationMarkers.push(foodSanitationMarker);
                 };
             }
+        }
+
+        // Attaches an info window to a marker with the provided message. When the marker is clicked,
+        // any existing info windows will close and the new info window will open with the message.
+        function createFoodInfoWindowContent(food) {
+            var message = '';
+            if (food.name) {
+                message += '<b>Name:</b> ' + food.name;
+            }
+            if (food.score) {
+                message += '<br /><b>Score:</b> ' + food.score;
+            }
+            if (food.address) {
+                message += '<br /><b>Address:</b> ' + food.address;
+            }
+            if (food.city) {
+                message += '<br /><b>City:</b> ' + food.city;
+            }
+            if (food.type) {
+                message += '<br /><b>Type:</b> ' + food.type;
+            }
+            if (food.category) {
+                message += '<br /><b>Category:</b> ' + food.category;
+            }
+            if (food.url) {
+                message += '<br /><a href="https://ohi.code4hr.org/#' + food.url + '" target="_blank">Learn More at ohi.code4hr.org</a>';
+            }
+
+            return message;
         }
 
         function removeFoodSanitationData() {
