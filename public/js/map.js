@@ -44,11 +44,19 @@ function initAutocomplete() {
                     ]
                 },
                 {
-                    'featureType': 'poi.school',
+                    'featureType': 'poi.medical',
+                    'elementType': 'geometry.fill',
                     'stylers': [
-                        { 'hue': '#cc00ff' }
+                        {'color': '#f79999'}
                     ]
                 },
+                {
+                    'featureType': 'poi.park',
+                    'elementType': 'geometry.fill',
+                    'stylers': [
+                        {'color': '#95d69e'}
+                    ]
+                }
             ];
             var mapOptions = {
                 minZoom: 8,
